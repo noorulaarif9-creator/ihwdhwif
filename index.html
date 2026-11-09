@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Anniversary Ammu 💝</title>
+  
+  <!-- Romantic Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@500;600&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. CSS VARIABLES & BASE STYLES
+       ========================================================================== */
+    :root {
+      --pink: #ffb6c1;
+      --dark-pink: #ff1493;
+      --hot-pink: #ff69b4;
+      --light-pink: #fff0f5;
+      --deep-red: #c71585;
+      --white: #ffffff;
+      --shadow: 0 8px 32px 0 rgba(255, 105, 180, 0.37);
+      --glass-bg: rgba(255, 255, 255, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.25);
+      --font-romantic: 'Great Vibes', cursive;
+      --font-letter: 'Caveat', cursive;
+      --font-main: 'Montserrat', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    input, textarea {
+      user-select: text;
+      -webkit-user-select: text;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at center, #3d0028 0%, #200015 60%, #0d0009 100%);
+      color: var(--white);
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Dynamic Twinkling Stars & Vinmeen Background */
+    #stars-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #fff, 0 0 12px var(--hot-pink);
+      animation: twinkle var(--duration) infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.4); }
+    }
+
+    /* Floating Love Emojis Background */
+    #emoji-bg-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .floating-emoji {
+      position: absolute;
+      bottom: -50px;
+      font-size: clamp(1rem, 3vw, 1.8rem);
+      opacity: 0.7;
+      animation: floatUp 8s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    #particle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .music-control {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .music-control:active {
+      transform: scale(0.95);
+    }
+
+    .page {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      z-index: 10;
+    }
+
+    .page.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: clamp(20px, 5vw, 35px);
+      box-shadow: var(--shadow);
+      text-align: center;
+      max-width: 550px;
+      width: 92%;
+      position: relative;
+      z-index: 5;
+    }
+
+    .romantic-heading {
+      font-family: var(--font-romantic);
+      font-size: clamp(2.5rem, 8vw, 3.8rem);
+      color: var(--pink);
+      text-shadow: 0 0 15px var(--hot-pink);
+      line-height: 1.2;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, var(--hot-pink), var(--dark-pink));
+      color: white;
+      border: none;
+      padding: clamp(10px, 3vw, 14px) clamp(22px, 5vw, 32px);
+      font-size: clamp(0.95rem, 3vw, 1.1rem);
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(255, 20, 147, 0.5);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      outline: none;
+      font-family: var(--font-main);
+    }
+
+    .btn:hover, .btn:active {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 6px 25px rgba(255, 20, 147, 0.7);
+    }
+
+    /* PAGE 1: Countdown */
+    .timer-display {
+      font-size: clamp(2.8rem, 10vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 0 20px var(--hot-pink), 0 0 40px var(--dark-pink);
+      animation: timerGlow 2s infinite alternate;
+      margin: 15px 0;
+    }
+
+    /* PAGE 2: Reveal */
+    .countdown-overlay {
+      position: absolute;
+      font-size: clamp(5rem, 20vw, 8rem);
+      font-weight: bold;
+      color: var(--white);
+      text-shadow: 0 0 30px var(--hot-pink);
+      animation: zoomFade 1s forwards;
+      pointer-events: none;
+    }
+
+    .wish-container {
+      font-size: clamp(0.95rem, 3vw, 1.15rem);
+      line-height: 1.6;
+      color: #fff;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .wish-line {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      margin-bottom: 6px;
+    }
+
+    .wish-line.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* PAGE 3: ENHANCED REALISTIC BUTTERFLIES */
+    #page3 {
+      justify-content: flex-start;
+      padding-top: clamp(40px, 8vh, 70px);
+    }
+
+    .butterfly-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 8; /* above the quote card so butterflies never hide behind the letters */
+    }
+
+    .real-butterfly {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      pointer-events: auto;
+      transform-style: preserve-3d;
+      filter: drop-shadow(0 0 12px rgba(255, 105, 180, 0.9));
+      transition: transform 0.3s ease;
+    }
+
+    .butterfly-body {
+      position: absolute;
+      left: 28px;
+      top: 12px;
+      width: 4px;
+      height: 36px;
+      background: linear-gradient(to bottom, #ffe4e1, #11000a);
+      border-radius: 50%;
+      z-index: 2;
+      box-shadow: 0 0 8px #ff69b4;
+    }
+
+    .butterfly-wing {
+      position: absolute;
+      top: 2px;
+      width: 28px;
+      height: 48px;
+      background: radial-gradient(circle at 30% 30%, #ffc0cb 0%, #ff1493 60%, #4a0033 100%);
+      border-radius: 85% 15% 85% 35%;
+      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      transform-origin: right center;
+      box-shadow: inset 0 0 8px rgba(255,255,255,0.6);
+    }
+
+    .butterfly-wing.left {
+      left: 0;
+      animation: flapLeft 0.28s infinite alternate ease-in-out;
+    }
+
+    .butterfly-wing.right {
+      left: 30px;
+      border-radius: 15% 85% 35% 85%;
+      transform-origin: left center;
+      animation: flapRight 0.28s infinite alternate ease-in-out;
+    }
+
+    @keyframes flapLeft {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(78deg); }
+    }
+
+    @keyframes flapRight {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(-78deg); }
+    }
+
+    .quote-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      z-index: 5;
+      margin-top: 12px;
+    }
+
+    .quote-box {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      padding: 9px 14px;
+      border-radius: 14px;
+      line-height: 1.4;
+      font-size: clamp(0.82rem, 2.6vw, 1rem);
+      color: #fff;
+      display: none;
+      animation: popup 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .quote-box.active {
+      display: block;
+    }
+
+    /* PAGE 4: POPUP PROPOSAL WITH ENHANCED POP EFFECT */
+    .proposal-heart {
+      font-size: clamp(3.5rem, 12vw, 5rem);
+      animation: heartbeat 1.2s infinite;
+      margin-bottom: 8px;
+    }
+
+    .popup-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 88%;
+      max-width: 420px;
+      background: rgba(35, 0, 24, 0.96);
+      border: 2px solid var(--hot-pink);
+      border-radius: 25px;
+      padding: 25px 20px;
+      box-shadow: 0 0 50px rgba(255, 20, 147, 0.8);
+      z-index: 100;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .popup-modal.active {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    /* PAGE 5: QUIZ MODAL FEEDBACK */
+    .quiz-progress {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      color: var(--pink);
+      margin-bottom: 12px;
+    }
+
+    .question-text {
+      font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .option-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid var(--glass-border);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: clamp(0.9rem, 2.8vw, 1rem);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.3s;
+    }
+
+    /* Fill-in-the-blank quiz */
+    .fill-sentence {
+      line-height: 2;
+      margin-bottom: 14px;
+    }
+
+    .fill-blank {
+      display: inline-block;
+      min-width: 110px;
+      max-width: 100%;
+      border: none;
+      border-bottom: 2px dashed var(--hot-pink);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      text-align: center;
+      padding: 1px 8px;
+      border-radius: 8px 8px 0 0;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .fill-blank:focus {
+      border-bottom: 2px solid #fff;
+      background: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 6px 16px rgba(255, 20, 147, 0.4);
+    }
+
+    .fill-blank.shake { animation: shakeX 0.4s; border-bottom-color: #ff4d6d; }
+
+    @keyframes shakeX {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    .fill-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .fill-actions .btn { margin-top: 6px; }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.15) !important;
+      box-shadow: none !important;
+      border: 1px solid var(--glass-border);
+    }
+
+    .fill-hint { font-size: 0.82rem; color: var(--pink); min-height: 1.3em; margin-top: 8px; }
+
+    .score-sub { font-size: 0.95rem; color: var(--pink); margin-bottom: 4px; }
+    .screenshot-note { margin-top: 10px; font-size: 0.9rem; font-weight: 600; color: #ffe3ec; background: rgba(255,255,255,0.14); border: 1px dashed var(--hot-pink); border-radius: 12px; padding: 8px 12px; }
+    .fill-textarea { width: 100%; min-height: 96px; resize: none; background: rgba(255,255,255,0.12); border: 1px solid var(--glass-border); border-bottom: 2px dashed var(--hot-pink); border-radius: 12px; color: #fff; font: inherit; font-size: 1rem; font-weight: 500; padding: 10px 12px; outline: none; text-align: left; line-height: 1.5; margin-top: 12px; }
+    .fill-textarea:focus { border-bottom: 2px solid #fff; background: rgba(255,255,255,0.18); box-shadow: 0 6px 16px rgba(255,20,147,0.4); }
+    .fill-textarea.shake { animation: shakeX 0.4s; border-bottom-color: #ff4d6d; }
+    .fill-textarea::placeholder { color: rgba(255,255,255,0.6); }
+    .review-item .q { display: block; font-weight: 600; color: #ffd1e6; margin-bottom: 3px; }
+    .review-item .a { display: block; color: #7dffb0; font-weight: 600; }
+
+    .quiz-review {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 38vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 10px 0 4px;
+      text-align: left;
+      padding-right: 4px;
+    }
+
+    .review-item {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--glass-border);
+      border-left: 4px solid #2ecc71;
+      border-radius: 12px;
+      padding: 9px 12px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .review-item.bad { border-left-color: #e74c3c; }
+    .review-item .tick { float: right; margin-left: 8px; }
+    .review-item .ans { color: #7dffb0; font-weight: 700; border-bottom: 2px solid #2ecc71; padding: 0 2px; }
+    .review-item .yours { display: block; font-size: 0.78rem; color: #ffb3b3; margin-top: 3px; }
+    .review-item .yours s { opacity: 0.85; }
+
+    .quiz-modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(20, 0, 15, 0.92);
+      backdrop-filter: blur(8px);
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+      padding: 15px;
+    }
+
+    .quiz-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .quiz-modal-gif {
+      width: 90px;
+      height: 90px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+    }
+
+    /* PAGE 6: LETTER JAR */
+    .jar-stage {
+      position: relative;
+      width: 140px;
+      height: 180px;
+      margin: 15px auto;
+      cursor: pointer;
+    }
+
+    .glass-jar {
+      width: 100%;
+      height: 100%;
+      border: 4px solid rgba(255, 255, 255, 0.7);
+      border-radius: 25px 25px 45px 45px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.4);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .jar-lid {
+      width: 90px;
+      height: 20px;
+      background: linear-gradient(90deg, #ffb6c1, #fff);
+      border-radius: 10px;
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .jar-stage.open .jar-lid {
+      transform: translateX(-50%) translateY(-45px) rotate(-35deg);
+    }
+
+    .rolled-scroll {
+      width: 40px;
+      height: 70px;
+      background: linear-gradient(45deg, #fff8dc, #ffe4b5);
+      border-radius: 6px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+      transition: all 0.8s ease;
+    }
+
+    .rolled-scroll::after {
+      content: '💛';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.1rem;
+    }
+
+    .jar-stage.open .rolled-scroll {
+      transform: translateY(-70px) scale(0);
+      opacity: 0;
+    }
+
+    .letter-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.7) rotate(-3deg);
+      width: 92%;
+      max-width: 500px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      background:
+        radial-gradient(circle at 15% 8%, rgba(255, 205, 220, 0.55), transparent 45%),
+        radial-gradient(circle at 92% 96%, rgba(255, 224, 186, 0.55), transparent 45%),
+        linear-gradient(160deg, #fffaf0 0%, #fff1e2 100%);
+      color: #4a1a2c;
+      padding: 40px 24px 16px 44px;
+      border-radius: 6px;
+      outline: 1px dashed rgba(199, 21, 133, 0.35);
+      outline-offset: -10px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(255, 105, 180, 0.55);
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .letter-modal::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 32px;
+      width: 1.5px;
+      background: rgba(214, 90, 120, 0.35);
+    }
+
+    .letter-modal.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1) rotate(-0.8deg);
+    }
+
+    .wax-seal {
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #ff5f8f, #b3003f 70%);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45), inset 0 -3px 6px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffe3ec;
+      font-size: 1.5rem;
+      animation: heartbeat 1.6s infinite;
+    }
+
+    .letter-content {
+      font-family: 'Dancing Script', 'Caveat', cursive;
+      font-size: clamp(1.25rem, 4.4vw, 1.55rem);
+      font-weight: 500;
+      line-height: 1.7;
+      color: #4a1a2c;
+      text-align: left;
+      white-space: pre-wrap;
+      flex: 1;
+      min-height: 0;
+      max-height: 56vh;
+      overflow-y: auto;
+      padding-right: 6px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .letter-content.typing::after {
+      content: '|';
+      color: var(--dark-pink);
+      animation: blinkCaret 0.7s infinite;
+    }
+
+    @keyframes blinkCaret { 50% { opacity: 0; } }
+
+    .l-greet {
+      font-family: var(--font-romantic);
+      font-size: 2.3rem;
+      color: #c71585;
+      line-height: 1.3;
+    }
+
+    .l-sign {
+      font-family: var(--font-romantic);
+      font-size: 1.7rem;
+      color: #c71585;
+      line-height: 1.4;
+    }
+
+    .flash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease-out;
+    }
+
+    .flash-screen.active { opacity: 1; }
+
+    /* PAGE 7: BALLOON POLAROID MEMORIES */
+    #page7 { justify-content: flex-start; padding-top: clamp(30px, 6vh, 50px); }
+    .balloon-head { max-width: 480px; padding: 14px 16px; }
+    .balloon-field { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 6; }
+    .balloon { position: absolute; width: 64px; pointer-events: auto; cursor: pointer; }
+    .balloon-sway { animation: balloonSway 3s ease-in-out infinite alternate; transform-origin: 50% 100%; }
+    .balloon:nth-child(even) .balloon-sway { animation-duration: 3.8s; }
+    .balloon-body {
+      position: relative; width: 64px; height: 80px;
+      border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%;
+      background: radial-gradient(circle at 32% 28%, rgba(255,255,255,0.85) 0 7%, var(--c1) 8%, var(--c2) 95%);
+      box-shadow: inset -6px -8px 14px rgba(0,0,0,0.18), 0 0 18px var(--c1);
+    }
+    .balloon-body::after {
+      content: ''; position: absolute; bottom: -7px; left: 50%; transform: translateX(-50%);
+      border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 9px solid var(--c2);
+    }
+    .balloon-string { width: 2px; height: 40px; background: rgba(255,255,255,0.6); margin: 7px auto 0; border-radius: 2px; }
+    .balloon.pop .balloon-sway { animation: none; transform: scale(1.7); opacity: 0; transition: all 0.25s ease-out; }
+    @keyframes balloonSway {
+      from { transform: translateY(0) rotate(-4deg); }
+      to { transform: translateY(-10px) rotate(4deg); }
+    }
+
+    .mini-wall { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+    .mini-slot {
+      width: clamp(48px, 16vw, 64px); aspect-ratio: 4 / 5; background: rgba(255,255,255,0.1);
+      border: 1.5px dashed var(--glass-border); border-radius: 4px; opacity: 0.7;
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .mini-slot:nth-child(even) { --r: 4deg; }
+    .mini-slot.filled {
+      background: #fff; border: none; padding: 3px 3px 10px; opacity: 1;
+      transform: rotate(var(--r, -4deg)); box-shadow: 0 4px 12px rgba(0,0,0,0.4); animation: popup 0.4s;
+    }
+    .mini-slot.filled img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .polaroid-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(13, 0, 9, 0.85); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 100;
+    }
+    .polaroid-overlay.active { opacity: 1; pointer-events: auto; }
+    .polaroid {
+      position: relative; width: min(76vw, 290px); background: #fff; padding: 12px 12px 52px; border-radius: 4px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255,105,180,0.5);
+      transform: rotate(-3deg) scale(0.2) translateY(-200px); opacity: 0;
+    }
+    .polaroid-overlay.active .polaroid { animation: polaroidDrop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+    .polaroid-tape {
+      position: absolute; top: -14px; left: 50%; width: 90px; height: 26px;
+      transform: translateX(-50%) rotate(2deg); background: rgba(255,228,181,0.78); box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    .polaroid-photo { width: 100%; aspect-ratio: 1 / 1; background: linear-gradient(135deg, #ffc0cb, #ff69b4); overflow: hidden; }
+    .polaroid-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .polaroid-overlay.active .polaroid-photo img { animation: develop 2.8s ease-out 0.5s both; }
+    .polaroid-caption {
+      position: absolute; left: 0; right: 0; bottom: 10px; text-align: center;
+      font-family: var(--font-letter); font-size: 1.7rem; color: #3a002c;
+    }
+    @keyframes polaroidDrop { to { transform: rotate(-3deg) scale(1) translateY(0); opacity: 1; } }
+    @keyframes develop { from { filter: brightness(0.15) sepia(1) blur(4px); } to { filter: none; } }
+
+    @keyframes timerGlow {
+      from { text-shadow: 0 0 15px var(--hot-pink); }
+      to { text-shadow: 0 0 35px var(--dark-pink), 0 0 10px #fff; }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+    }
+
+    @keyframes popup {
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes zoomFade {
+      0% { transform: scale(0.3); opacity: 0; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Starry Background Vinmeen Effect -->
+  <div id="stars-container"></div>
+
+  <!-- Floating Background Love Emojis -->
+  <div id="emoji-bg-container"></div>
+
+  <div id="particle-container"></div>
+  <div id="flash-overlay" class="flash-screen"></div>
+
+  <div class="music-control" id="music-btn">
+    <span style="font-size: 1.3rem;" id="music-icon">🎵</span>
+  </div>
+
+  <!-- PAGE 1: COUNTDOWN -->
+  <section class="page active" id="page1">
+    <div class="glass-card">
+      <div style="font-size: clamp(1.3rem, 4vw, 1.8rem); font-family: var(--font-romantic); color: var(--pink);">Happy First year love anniversary Ammu 🫣💝</div>
+      <div class="timer-display" id="timer">11 : 59 : 57</div>
+      <div style="font-size: 0.85rem; color: var(--pink);">Stay here until midnight 💞</div>
+    </div>
+  </section>
+
+  <!-- PAGE 2: REVEAL -->
+  <section class="page" id="page2">
+    <div id="countdown-reveal-overlay" class="countdown-overlay"></div>
+    <div class="glass-card" id="reveal-card" style="opacity: 0; transition: opacity 1s;">
+      <h1 class="romantic-heading"> Happy First year love <span class="fname"> anniversary Ammu </span>🫣💝</h1>
+      <div class="wish-container">
+        <div class="wish-line">Today is not just another day,</div>
+        <div class="wish-line">It's the day the world got my favourite best Person.</div>
+        <div class="wish-line">Thank you for every laugh, every talk and every little memory,</div>
+        <div class="wish-line">For standing by me no matter what.</div>
+        <div class="wish-line">Happy Anniversary, my Ammu 💞</div>
+      </div>
+      <button class="btn" id="btn-memories" style="display: none;" onclick="navigateTo(3)">
+         Memories
+      </button>
+    </div>
+  </section>
+
+  <!-- PAGE 3: REALISTIC BUTTERFLY GARDEN -->
+  <section class="page" id="page3">
+    <div id="quote-wrapper-card" class="glass-card" style="max-width: 480px; padding: 20px;">
+      <h2 class="romantic-heading" style="font-size: clamp(2.2rem, 6vw, 2.8rem);">Memory Garden 🦋</h2>
+      <div style="background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 20px; display: inline-block; font-size: 0.8rem;" id="butterfly-progress">0 / 5 memories unlocked</div>
+      
+      <div class="quote-grid">
+        <div class="quote-box" id="quote-0">"First namma friends-ah irundhom, aprm naane vandhu unta propose panna. Andha days marakamaten till my death 💝🥹"</div>
+        <div class="quote-box" id="quote-1">"Ennoda kovatha mothama maraka vacha oru god gifted nee 🎁💞 Unna vidanunu oru naalum nenachadhilla 🫶"</div>
+        <div class="quote-box" id="quote-2">"Ennoda Ammava enkooda irundhu enna bathrama pathukitta, enna oru kozhandha maari 🥺💝"</div>
+        <div class="quote-box" id="quote-3">"Evlo sanda vandhalum nee enna vittu poganum nu ninaikala Ammu, andha situation dhan unna sila vishyam pesa vachiduchu 🥹💞"</div>
+        <div class="quote-box" id="quote-4">"I want my ammu back and I love u to make you happy till the end of my life 💖🥺🫶♾️"</div>
+      </div>
+    </div>
+
+    <div class="butterfly-container" id="butterfly-container"></div>
+
+    <button class="btn" id="btn-love-you" style="display: none; position: fixed; bottom: 25px; z-index: 20;" onclick="navigateTo(7)">
+      My Ammu 💞
+    </button>
+  </section>
+
+  <!-- PAGE 4: PROPOSAL WITH BIG GIF & POP EFFECT -->
+  <section class="page" id="page4">
+    <div class="glass-card">
+      <div class="proposal-heart">💍</div>
+      <h2 class="romantic-heading" id="proposal-title" style="font-size: clamp(2.2rem, 6vw, 2.8rem); margin-bottom: 15px;">Will you marry me? 💍💝</h2>
+      
+      <div id="proposal-btn-group" style="display: flex; justify-content: center; gap: 15px; min-height: 70px; position: relative; width: 100%;">
+        <span id="playful-text" style="position: absolute; top: -30px; color: var(--pink); font-weight: bold; font-size: 0.9rem; opacity: 0; transition: opacity 0.3s;"></span>
+        <button class="btn" id="btn-yes" onclick="handleYesClick()">Yes 💍</button>
+        <button class="btn" id="btn-no" style="background: rgba(255,255,255,0.2); box-shadow: none;" onclick="handleNoInteraction()">No 😏</button>
+      </div>
+    </div>
+
+    <!-- Celebration Popup with Big Celebration GIF -->
+    <div class="popup-modal" id="proposal-popup">
+      <h2 class="romantic-heading" style="font-size: clamp(2.3rem, 7vw, 3rem); margin-bottom: 8px;">Yaaay! You said YES! 🎉💍</h2>
+      
+      <!-- Big Romantic Celebration GIF -->
+      <div style="margin: 10px 0;">
+        <img src="assets/dudu-giving-flowers-bubu-flowers.gif" 
+             alt="Love Celebration GIF" 
+             style="width: 100%; max-width: 230px; height: 165px; object-fit: cover; border-radius: 20px; box-shadow: 0 0 25px rgba(255, 105, 180, 0.8);">
+      </div>
+
+      <p style="font-size: clamp(1.4rem, 5vw, 1.8rem); font-family: var(--font-romantic); color: var(--pink); margin: 10px 0; font-weight: bold;">Forever yours, my Ammu! 💍✨</p>
+      
+      <button class="btn" style="margin-top: 10px;" onclick="closeProposalPopupAndContinue()">🧠 Quiz</button>
+    </div>
+  </section>
+
+  <!-- PAGE 5: LOVE QUIZ WITH GIF OVERLAY MODAL -->
+  <section class="page" id="page5">
+    <div class="glass-card">
+      <div id="quiz-body">
+        <div class="quiz-progress" id="quiz-progress">Love Quiz 💝 • Question 1 / 5</div>
+        <div class="question-text" id="quiz-question">Loading...</div>
+        <div class="options-grid" id="quiz-options"></div>
+
+        <!-- Quiz Reaction Overlay Modal -->
+        <div class="quiz-modal-overlay" id="quiz-modal-overlay">
+          <img class="quiz-modal-gif" id="quiz-modal-gif" src="" alt="Reaction">
+          <div id="quiz-modal-status" style="font-weight: bold; font-size: 1.1rem;"></div>
+          <button class="btn" id="quiz-continue-btn" style="margin-top: 5px; padding: 8px 20px;" onclick="continueQuiz()">Continue 💝 </button>
+        </div>
+      </div>
+
+      <div id="quiz-result" style="display: none;">
+        <h2 class="romantic-heading">Your Score</h2>
+        <div style="margin: 8px 0;">
+          <img id="result-gif" style="width: 80px; height: 80px; border-radius: 18px; object-fit: cover;" src="" alt="Score reaction">
+        </div>
+        <div style="font-size: 2.2rem; font-weight: bold;" id="score-text">100% 💝 </div>
+        <div class="score-sub" id="score-sub"></div>
+        <div class="quiz-review" id="quiz-review"></div>
+        <div class="screenshot-note">📸 Take a screenshot of this page and send it to me! 💝 </div>
+        <button class="btn" onclick="navigateTo(6)">💌 Letter</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 6: LETTER JAR -->
+  <section class="page" id="page6">
+    <div class="glass-card">
+      <h2 class="romantic-heading" style="font-size: clamp(2.2rem, 6vw, 2.8rem);">A little letter for you...</h2>
+      
+      <div class="jar-stage" id="jar" onclick="openJar()">
+        <div class="jar-lid"></div>
+        <div class="glass-jar">
+          <div class="rolled-scroll"></div>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--pink);">Tap the jar to open 💞</p>
+    </div>
+
+    <div class="letter-modal" id="letter-modal">
+      <div class="wax-seal">★</div>
+      <button style="position: absolute; top: 12px; right: 12px; background: rgba(255,20,147,0.1); border: 1px solid var(--hot-pink); color: var(--dark-pink); padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; cursor: pointer; font-weight: bold;" onclick="skipTyping()">SKIP</button>
+      <div class="letter-content" id="letter-text"></div>
+      <div style="text-align: center; margin-top: 12px;">
+        <button class="btn" id="btn-loop" style="display: none;" onclick="resetToCountdown()">🔁 Replay</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 7: BALLOON POLAROID MEMORIES -->
+  <section class="page" id="page7">
+    <div class="glass-card balloon-head">
+      <h2 class="romantic-heading" style="font-size: clamp(2.2rem, 6vw, 2.8rem);">Balloon Memories 🎈</h2>
+      <div style="background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 20px; display: inline-block; font-size: 0.8rem;" id="balloon-progress">0 / 2 photos unlocked</div>
+      <div class="mini-wall">
+        <div class="mini-slot">🎈</div><div class="mini-slot">🎈</div>
+      </div>
+    </div>
+
+    <div class="balloon-field" id="balloon-field"></div>
+
+    <div class="polaroid-overlay" id="polaroid-overlay">
+      <div class="polaroid">
+        <div class="polaroid-tape"></div>
+        <div class="polaroid-photo"><img id="polaroid-img" src="" alt="Memory"></div>
+        <div class="polaroid-caption" id="polaroid-caption"></div>
+      </div>
+      <button class="btn" style="margin-top: 0;" onclick="closePolaroid()">Keep it </button>
+    </div>
+
+    <button class="btn" id="btn-to-quiz" style="display: none; position: fixed; bottom: 25px; z-index: 20;" onclick="navigateTo(4)">💍 Next</button>
+  </section>
+
+  <script>
+    const TEST_MODE = true; 
+    const FRIEND_NAME = "Anniversary Ammu 💝"; // <-- friend name maathanum na inga maathunga
+    document.querySelectorAll('.fname').forEach(el => el.textContent = FRIEND_NAME);
+    document.title = `Happy Anniversary Ammu 💝`;
+
+    const state = {
+      currentPage: 1,
+      memoriesUnlocked: 0,
+      noMoves: 0,
+      quizIndex: 0,
+      score: 0,
+      answers: [],
+      missed: [],
+      lastOk: true,
+      typingInterval: null,
+      isTyping: false,
+      audioPlaying: false,
+      butterflies: []
+    };
+
+    // First 4 = choose (only ONE correct option: "correct" = index). Last = fill-in (no options).
+    const quizData = [
+      { q: "Which place did we meet for the first time? 🤔",
+        options: ["College 🎓", "Home 🏠", "Office 🏢", "Park 🌳"], correct: 0 },
+      { q: "Who proposed first? 💍",
+        options: ["Me 🙋‍♂️", "You 🙋‍♀️", "Both 💞"], correct: 0 },
+      { q: "Which is the favourite thing you like in me? 😍",
+        options: ["Face 😊", "Character 💛", "Sense of humour 😂"], correct: 1 },
+      { q: "Do you believe that I will leave you? 🥺",
+        options: ["Yes 😢", "No 🥰", "Maybe 🤷"], correct: 1 },
+      { q: "Enta pudikadha vishyam enna? Naan maathikkanum nu nenaikira vishyam: ______ 🫣" }
+    ];
+
+    const correctGifs = [
+      "assets/happy-dudu.gif",
+      "assets/happy-dudu.gif",
+    ];
+
+    const wrongGifs = [
+      "assets/sad-bubu.gif",
+      "assets/sad-bubu.gif"
+    ];
+
+    const scoreGifs = {
+      0: "assets/angry.gif",
+      20: "assets/normal.gif",
+      40: "assets/normalhappy.gif",
+      60: "assets/happy.gif",
+      100: "assets/dudububuhappy.gif"
+    };
+
+    const letterContent = `Dear Ammu 💝,\n\nAmmu unna pathi nenachu azhuven theriyum, but nadu rathirila un photo paathu azhudhu paithiyam aaven nenaikala 😭💞\n\nEnnaikum vittu poven mattum nenaikadha 🥺\n\nAlways only you, no any other in my life 💍\n\nEnnoda Amma, lover, life partner, wife ellam nee dhan ammu 🤱❤️\n\nEnnoda childishness unta mattum dhan katuven 🥹\n\nAs I promised, unna queen maari pathupen 👑💝\n\nUyire, nee dhan. Nee illena naa illa, avlodhan ammu 💞🫶`;
+
+    /* STARRY BACKGROUND & VINMEEN GENERATOR */
+    function initStarBackground() {
+      const container = document.getElementById('stars-container');
+      const starCount = window.innerWidth < 600 ? 45 : 85;
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        const size = Math.random() * 3 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+        container.appendChild(star);
+      }
+    }
+
+    /* BACKGROUND FLOATING EMOJIS */
+    function initFloatingEmojis() {
+      const container = document.getElementById('emoji-bg-container');
+      const emojis = ['💞', '✨', '🌟', '🌸', '🎉', '💍'];
+      setInterval(() => {
+        const e = document.createElement('div');
+        e.className = 'floating-emoji';
+        e.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        e.style.left = `${Math.random() * 95}vw`;
+        e.style.animationDuration = `${Math.random() * 4 + 6}s`;
+        container.appendChild(e);
+
+        setTimeout(() => e.remove(), 9000);
+      }, 850);
+    }
+
+    /* BACKGROUND SONG (assets/ folder) */
+    const MUSIC_SRC = "assets/bgm-1.mp3"; // <-- unga song file name inga maathunga
+    const bgAudio = new Audio(MUSIC_SRC);
+    bgAudio.loop = true;
+    bgAudio.volume = 0.7;
+    const musicBtn = document.getElementById('music-btn');
+
+    function setMusic(on) {
+      const icon = document.getElementById('music-icon');
+      if(on) {
+        state.audioPlaying = true;
+        icon.textContent = '💛';
+        bgAudio.play().catch(() => { state.audioPlaying = false; icon.textContent = '🎵'; });
+      } else {
+        bgAudio.pause();
+        state.audioPlaying = false;
+        icon.textContent = '🎵';
+      }
+    }
+
+    musicBtn.addEventListener('click', () => setMusic(!state.audioPlaying));
+
+    document.body.addEventListener('click', (e) => {
+      if(!state.audioPlaying && !e.target.closest('#music-btn')) setMusic(true);
+    }, { once: true });
+
+    /* NAVIGATION */
+    function navigateTo(pageNumber) {
+      document.getElementById(`page${state.currentPage}`).classList.remove('active');
+      state.currentPage = pageNumber;
+      setTimeout(() => {
+        document.getElementById(`page${pageNumber}`).classList.add('active');
+        if(pageNumber === 2) startBirthdayReveal();
+        if(pageNumber === 3) initButterflies();
+        if(pageNumber === 5) loadQuizQuestion();
+        if(pageNumber === 7) initBalloons();
+      }, 300);
+    }
+
+    /* PAGE 1: COUNTDOWN */
+    let countdownSecs = 57;
+    let countdownInterval = null;
+
+    function startMidnightCountdown() {
+      const timerEl = document.getElementById('timer');
+      if(countdownInterval) clearInterval(countdownInterval);
+      
+      countdownInterval = setInterval(() => {
+        if(TEST_MODE) {
+          if(countdownSecs < 60) {
+            timerEl.textContent = `11 : 59 : ${countdownSecs}`;
+            countdownSecs++;
+          } else {
+            timerEl.textContent = "12 : 00 : 00";
+            clearInterval(countdownInterval);
+            triggerFlashTransition();
+          }
+        } else {
+          const now = new Date();
+          const h = String(now.getHours()).padStart(2, '0');
+          const m = String(now.getMinutes()).padStart(2, '0');
+          const s = String(now.getSeconds()).padStart(2, '0');
+          timerEl.textContent = `${h} : ${m} : ${s}`;
+          if(h === '00' && m === '00' && s === '00') {
+            clearInterval(countdownInterval);
+            triggerFlashTransition();
+          }
+        }
+      }, 1000);
+    }
+
+    function triggerFlashTransition() {
+      const flash = document.getElementById('flash-overlay');
+      flash.classList.add('active');
+      setTimeout(() => {
+        navigateTo(2);
+        flash.classList.remove('active');
+      }, 600);
+    }
+
+    /* PAGE 2: REVEAL */
+    function startBirthdayReveal() {
+      const overlay = document.getElementById('countdown-reveal-overlay');
+      const card = document.getElementById('reveal-card');
+      const numbers = ['3', '2', '1'];
+      let idx = 0;
+      overlay.style.display = 'block';
+
+      const interval = setInterval(() => {
+        if(idx < numbers.length) {
+          overlay.textContent = numbers[idx];
+          overlay.style.animation = 'none';
+          overlay.offsetHeight;
+          overlay.style.animation = 'zoomFade 1s forwards';
+          idx++;
+        } else {
+          clearInterval(interval);
+          overlay.style.display = 'none';
+          card.style.opacity = '1';
+          const lines = document.querySelectorAll('.wish-line');
+          lines.forEach((line, i) => {
+            setTimeout(() => {
+              line.classList.add('visible');
+              if(i === lines.length - 1) {
+                setTimeout(() => document.getElementById('btn-memories').style.display = 'inline-flex', 800);
+              }
+            }, i * 800);
+          });
+        }
+      }, 1000);
+    }
+
+    /* PAGE 3: SAFE REALISTIC BUTTERFLY FLIGHT FOR ALL SCREENS */
+    function initButterflies() {
+      const container = document.getElementById('butterfly-container');
+      container.innerHTML = '';
+      state.memoriesUnlocked = 0;
+      state.butterflies = [];
+      document.getElementById('butterfly-progress').textContent = '0 / 5 memories unlocked';
+      document.querySelectorAll('.quote-box').forEach(q => q.classList.remove('active'));
+      document.getElementById('btn-love-you').style.display = 'none';
+
+      for(let i = 0; i < 5; i++) {
+        const b = document.createElement('div');
+        b.className = 'real-butterfly';
+        b.dataset.id = i;
+        b.innerHTML = `
+          <div class="butterfly-body"></div>
+          <div class="butterfly-wing left"></div>
+          <div class="butterfly-wing right"></div>
+        `;
+        container.appendChild(b);
+        state.butterflies.push({ el: b, clicked: false, timer: null });
+        animateButterflySafeFlight(b, i);
+
+        // Touch and click listener for high mobile compatibility
+        b.addEventListener('pointerdown', (e) => handleButterflyClick(e, i));
+      }
+    }
+
+    const BF_SIZE = 60;
+
+    function getCardRect() {
+      return document.getElementById('quote-wrapper-card').getBoundingClientRect();
+    }
+
+    function overlapsCard(x, y, r) {
+      const m = 10;
+      return x + BF_SIZE > r.left - m && x < r.right + m &&
+             y + BF_SIZE > r.top - m && y < r.bottom + m;
+    }
+
+    // Random flight spot that stays OUTSIDE the quote card (measured live, so it
+    // also respects the card growing as quotes unlock).
+    function getFlightPos() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const r = getCardRect();
+
+      for (let t = 0; t < 40; t++) {
+        const x = 10 + Math.random() * (w - BF_SIZE - 20);
+        const y = 45 + Math.random() * (h - BF_SIZE - 130);
+        if (!overlapsCard(x, y, r)) return { x, y };
+      }
+      return {
+        x: 10 + Math.random() * (w - BF_SIZE - 20),
+        y: Math.min(r.bottom + 14, h - BF_SIZE - 70) + Math.random() * 10
+      };
+    }
+
+    function animateButterflySafeFlight(el, idx) {
+      let pos = getFlightPos();
+      el.style.left = `${pos.x}px`;
+      el.style.top = `${pos.y}px`;
+
+      state.butterflies[idx].timer = setInterval(() => {
+        if (state.butterflies[idx].clicked) {
+          clearInterval(state.butterflies[idx].timer);
+          return;
+        }
+        pos = getFlightPos();
+        el.style.transition = `left ${3.2 + idx}s ease-in-out, top ${3.2 + idx}s ease-in-out`;
+        el.style.left = `${pos.x}px`;
+        el.style.top = `${pos.y}px`;
+      }, (3.2 + idx) * 1000);
+    }
+
+    // Caught butterflies perch in a neat row just under the card (never on the letters).
+    function layoutParkedButterflies() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const r = getCardRect();
+      const y = Math.min(r.bottom + 14, h - BF_SIZE - 60);
+      const step = (w - 36 - BF_SIZE) / 4;
+
+      state.butterflies.forEach((b) => {
+        if (!b.clicked) return;
+        b.el.style.transition = 'all 1.2s cubic-bezier(0.25, 1, 0.5, 1)';
+        b.el.style.left = `${18 + b.slot * step}px`;
+        b.el.style.top = `${y}px`;
+      });
+    }
+
+    function handleButterflyClick(e, index) {
+      const bObj = state.butterflies[index];
+      if (bObj.clicked) return;
+
+      bObj.clicked = true;
+      bObj.slot = state.memoriesUnlocked;
+      if (bObj.timer) clearInterval(bObj.timer);
+
+      document.getElementById(`quote-${index}`).classList.add('active');
+
+      state.memoriesUnlocked++;
+      document.getElementById('butterfly-progress').textContent = `${state.memoriesUnlocked} / 5 memories unlocked`;
+
+      layoutParkedButterflies();
+      createHeartBurst(e.clientX || window.innerWidth / 2, e.clientY || window.innerHeight / 2, 12);
+
+      if (state.memoriesUnlocked === 5) {
+        setTimeout(() => triggerButterfliesCenterFly(), 1000);
+      }
+    }
+
+    function triggerButterfliesCenterFly() {
+      const centerX = window.innerWidth / 2 - 30;
+      const centerY = window.innerHeight / 2 - 30;
+
+      state.butterflies.forEach((bObj) => {
+        bObj.el.style.transition = "all 1.8s ease-in-out";
+        bObj.el.style.left = `${centerX}px`;
+        bObj.el.style.top = `${centerY}px`;
+        bObj.el.style.transform = "scale(0) rotate(360deg)";
+        bObj.el.style.opacity = "0";
+      });
+
+      setTimeout(() => {
+        createHeartBurst(centerX + 30, centerY + 30, 35);
+        document.getElementById('btn-love-you').style.display = 'inline-flex';
+      }, 1800);
+    }
+
+    /* PAGE 4: PROPOSAL POPUP */
+    const noTexts = ["Are you sure? 👀", "Think again da 😭", "Ammu please sollu Yes nu 🥺", "Try catching me! 😝", "Hehe nope! 💞"];
+    function handleNoInteraction() {
+      if(state.noMoves < 5) {
+        const btnNo = document.getElementById('btn-no');
+        const btnYes = document.getElementById('btn-yes');
+        const playful = document.getElementById('playful-text');
+
+        const x = (Math.random() - 0.5) * 140;
+        const y = (Math.random() - 0.5) * 90;
+        btnNo.style.transform = `translate(${x}px, ${y}px)`;
+
+        playful.textContent = noTexts[state.noMoves];
+        playful.style.opacity = '1';
+
+        state.noMoves++;
+        btnYes.style.transform = `scale(${1 + state.noMoves * 0.1})`;
+
+        if(state.noMoves === 5) {
+          setTimeout(() => {
+            btnNo.style.display = 'none';
+            playful.style.opacity = '0';
+          }, 300);
+        }
+      }
+    }
+
+    function handleYesClick() {
+      document.getElementById('proposal-popup').classList.add('active');
+      createHeartBurst(window.innerWidth / 2, window.innerHeight / 2, 45);
+    }
+
+    function closeProposalPopupAndContinue() {
+      document.getElementById('proposal-popup').classList.remove('active');
+      setTimeout(() => navigateTo(5), 300);
+    }
+
+    /* PAGE 5: FILL-IN-THE-BLANK QUIZ */
+    function normalizeAns(str) {
+      return (str || '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
+    }
+
+    function loadQuizQuestion() {
+      const q = quizData[state.quizIndex];
+      document.getElementById('quiz-progress').textContent = `Love Quiz 💝 • Question ${state.quizIndex + 1} / ${quizData.length}`;
+
+      const qEl = document.getElementById('quiz-question');
+      qEl.className = 'question-text';
+      qEl.innerHTML = '';
+      qEl.appendChild(document.createTextNode(q.q));
+
+      document.getElementById('quiz-modal-overlay').classList.remove('active');
+
+      const grid = document.getElementById('quiz-options');
+      grid.innerHTML = '';
+
+      // Choose-type question: 3 options, any click = perfect
+      if (q.options) {
+        q.options.forEach(opt => {
+          const b = document.createElement('button');
+          b.className = 'option-btn';
+          b.textContent = opt;
+          b.onclick = () => finishAnswer(opt);
+          grid.appendChild(b);
+        });
+        return;
+      }
+
+      // Last question: fill-in
+      const input = document.createElement('textarea');
+      input.id = 'fill-input';
+      input.className = 'fill-textarea';
+      input.placeholder = 'Type your answer here...';
+      input.maxLength = 300;
+      input.autocomplete = 'off';
+      input.setAttribute('aria-label', 'Your answer');
+      qEl.appendChild(input);
+
+      const row = document.createElement('div');
+      row.className = 'fill-actions';
+
+      const submit = document.createElement('button');
+      submit.className = 'btn';
+      submit.textContent = 'Submit ✓';
+      submit.onclick = submitFill;
+
+      row.appendChild(submit);
+      grid.appendChild(row);
+
+      setTimeout(() => input.focus({ preventScroll: true }), 450);
+    }
+
+    function submitFill() {
+      const modal = document.getElementById('quiz-modal-overlay');
+      if (modal.classList.contains('active')) return;
+
+      const input = document.getElementById('fill-input');
+      const val = input.value.trim();
+
+      if (!val) {
+        input.classList.remove('shake');
+        void input.offsetWidth;
+        input.classList.add('shake');
+        input.focus();
+        return;
+      }
+      input.blur();
+      finishAnswer(val);
+    }
+
+    function finishAnswer(val) {
+      const modal = document.getElementById('quiz-modal-overlay');
+      if (modal.classList.contains('active')) return;
+
+      const idx = state.quizIndex;
+      const q = quizData[idx];
+      const ok = q.options ? (val === q.options[q.correct]) : true; // fill-in is always accepted 💛
+      state.lastOk = ok;
+
+      const gif = document.getElementById('quiz-modal-gif');
+      const status = document.getElementById('quiz-modal-status');
+      const contBtn = document.getElementById('quiz-continue-btn');
+
+      if (ok) {
+        state.answers[idx] = { given: val, ok: !state.missed[idx] };
+        gif.src = correctGifs[Math.floor(Math.random() * correctGifs.length)];
+        status.innerHTML = 'Perfect! 💛';
+        status.style.color = '#2ecc71';
+        contBtn.textContent = 'Continue 💝';
+        createHeartBurst(window.innerWidth / 2, window.innerHeight / 2, 12);
+      } else {
+        state.missed[idx] = true;
+        gif.src = wrongGifs[Math.floor(Math.random() * wrongGifs.length)];
+        status.innerHTML = 'Wrong! ❌ Try again 😢';
+        status.style.color = '#e74c3c';
+        contBtn.textContent = 'Try again 🔁';
+      }
+
+      modal.classList.add('active');
+    }
+
+    function continueQuiz() {
+      document.getElementById('quiz-modal-overlay').classList.remove('active');
+      if (!state.lastOk) return; // wrong -> stay on the same question
+      state.quizIndex++;
+      if (state.quizIndex < quizData.length) {
+        loadQuizQuestion();
+      } else {
+        showQuizResults();
+      }
+    }
+
+    function showQuizResults() {
+      document.getElementById('quiz-body').style.display = 'none';
+      const res = document.getElementById('quiz-result');
+      res.style.display = 'block';
+
+      const correctCount = state.answers.filter(a => a && a.ok).length;
+      const score = Math.round((correctCount / quizData.length) * 100);
+      document.getElementById('score-text').textContent = `${score}% 💛`;
+      document.getElementById('score-sub').textContent = `${correctCount} / ${quizData.length} first-try answers 🌟`;
+
+      const resultGif = document.getElementById('result-gif');
+      if (score <= 20) resultGif.src = scoreGifs[0];
+      else if (score <= 40) resultGif.src = scoreGifs[20];
+      else if (score <= 60) resultGif.src = scoreGifs[40];
+      else if (score <= 80) resultGif.src = scoreGifs[60];
+      else resultGif.src = scoreGifs[100];
+
+      // Quiz + answers review
+      const review = document.getElementById('quiz-review');
+      review.innerHTML = '';
+      quizData.forEach((q, i) => {
+        const a = state.answers[i] || { given: '', ok: true };
+        const item = document.createElement('div');
+        item.className = 'review-item';
+
+        const tick = document.createElement('span');
+        tick.className = 'tick';
+        tick.textContent = a.ok ? '✅' : '🔁';
+        item.appendChild(tick);
+
+        const qq = document.createElement('span');
+        qq.className = 'q';
+        qq.textContent = `${i + 1}. ${q.q}`;
+        item.appendChild(qq);
+
+        const aa = document.createElement('span');
+        aa.className = 'a';
+        aa.textContent = a.given;
+        item.appendChild(aa);
+
+        review.appendChild(item);
+      });
+      review.scrollTop = 0;
+    }
+
+    /* PAGE 6: LETTER JAR */
+    function openJar() {
+      const jar = document.getElementById('jar');
+      if(jar.classList.contains('open')) return;
+      
+      jar.classList.add('open');
+      createHeartBurst(window.innerWidth / 2, window.innerHeight / 2, 25);
+
+      setTimeout(() => {
+        document.getElementById('letter-modal').classList.add('active');
+        startTypingLetter();
+      }, 700);
+    }
+
+    function renderLetter(txt) {
+      const lastIdx = letterContent.split('\n').length - 1;
+      return txt.split('\n').map((ln, i) => {
+        if (i === 0) return `<span class="l-greet">${ln}</span>`;
+        if (i === lastIdx && ln) return `<span class="l-sign">${ln}</span>`;
+        return ln;
+      }).join('\n');
+    }
+
+    function startTypingLetter() {
+      const letterEl = document.getElementById('letter-text');
+      letterEl.innerHTML = '';
+      letterEl.classList.add('typing');
+      state.isTyping = true;
+      let i = 0;
+
+      state.typingInterval = setInterval(() => {
+        if (i < letterContent.length) {
+          i++;
+          letterEl.innerHTML = renderLetter(letterContent.slice(0, i));
+          letterEl.scrollTop = letterEl.scrollHeight;
+        } else {
+          finishLetter();
+        }
+      }, 38);
+    }
+
+    function skipTyping() {
+      if (state.isTyping) {
+        clearInterval(state.typingInterval);
+        const el = document.getElementById('letter-text');
+        el.innerHTML = renderLetter(letterContent);
+        finishLetter();
+      }
+    }
+
+    function finishLetter() {
+      clearInterval(state.typingInterval);
+      state.isTyping = false;
+      document.getElementById('letter-text').classList.remove('typing');
+      document.getElementById('btn-loop').style.display = 'inline-flex';
+    }
+
+    /* PAGE 7: BALLOONS -> POLAROID PHOTOS */
+    const BALLOON_PHOTOS = [
+      { src: "assets/img-1.jpg", caption: "Together Forever 💛" },
+      { src: "assets/img-2.jpg", caption: "My Everything 🤝" }
+    ];
+    const BALLOON_COLORS = [['#ff9ec4', '#ff1493'], ['#ffd27f', '#ff8c00'], ['#a5d8ff', '#339af0'], ['#d0bfff', '#845ef7']];
+    const balloonState = { opened: 0, current: null };
+
+    function initBalloons() {
+      const field = document.getElementById('balloon-field');
+      field.innerHTML = '';
+      balloonState.opened = 0;
+      balloonState.current = null;
+      document.getElementById('balloon-progress').textContent = '0 / 2 photos unlocked';
+      document.getElementById('btn-to-quiz').style.display = 'none';
+      document.querySelectorAll('.mini-slot').forEach(sl => { sl.className = 'mini-slot'; sl.textContent = '🎈'; });
+
+      BALLOON_PHOTOS.forEach((p, i) => {
+        const b = document.createElement('div');
+        b.className = 'balloon';
+        b.style.setProperty('--c1', BALLOON_COLORS[i][0]);
+        b.style.setProperty('--c2', BALLOON_COLORS[i][1]);
+        b.innerHTML = '<div class="balloon-sway"><div class="balloon-body"></div><div class="balloon-string"></div></div>';
+        field.appendChild(b);
+        moveBalloon(b, true);
+        b._timer = setInterval(() => moveBalloon(b, false), 5000 + i * 700);
+        b.addEventListener('pointerdown', () => popBalloon(b, i));
+      });
+    }
+
+    function moveBalloon(b, instant) {
+      const head = document.querySelector('#page7 .balloon-head').getBoundingClientRect();
+      const w = window.innerWidth, h = window.innerHeight;
+      const minY = head.bottom + 8;
+      const maxY = Math.max(minY + 20, h - 130);
+      b.style.transition = instant ? 'none' : 'left 5s ease-in-out, top 5s ease-in-out';
+      b.style.left = `${Math.random() * (w - 84) + 10}px`;
+      b.style.top = `${Math.random() * (maxY - minY) + minY}px`;
+    }
+
+    function popBalloon(b, i) {
+      if(b.dataset.popped) return;
+      b.dataset.popped = '1';
+      clearInterval(b._timer);
+      const r = b.getBoundingClientRect();
+      createHeartBurst(r.left + 32, r.top + 40, 14);
+      b.classList.add('pop');
+      setTimeout(() => b.remove(), 250);
+      setTimeout(() => openPolaroid(i), 300);
+    }
+
+    function openPolaroid(i) {
+      const img = document.getElementById('polaroid-img');
+      img.style.visibility = 'visible';
+      img.onerror = () => { img.style.visibility = 'hidden'; };
+      img.src = BALLOON_PHOTOS[i].src;
+      document.getElementById('polaroid-caption').textContent = BALLOON_PHOTOS[i].caption;
+      balloonState.current = i;
+      document.getElementById('polaroid-overlay').classList.add('active');
+    }
+
+    function closePolaroid() {
+      const i = balloonState.current;
+      if(i === null) return;
+      balloonState.current = null;
+      document.getElementById('polaroid-overlay').classList.remove('active');
+
+      const slot = document.querySelectorAll('.mini-slot')[balloonState.opened];
+      slot.classList.add('filled');
+      slot.innerHTML = `<img src="${BALLOON_PHOTOS[i].src}" alt="">`;
+      balloonState.opened++;
+      document.getElementById('balloon-progress').textContent = `${balloonState.opened} / 2 photos unlocked`;
+      if(balloonState.opened === 2) {
+        setTimeout(() => { document.getElementById('btn-to-quiz').style.display = 'inline-flex'; }, 500);
+      }
+    }
+
+    /* LOVE LOOP DIRECTLY TO COUNTDOWN PAGE */
+    function resetToCountdown() {
+      state.memoriesUnlocked = 0;
+      state.noMoves = 0;
+      state.quizIndex = 0;
+      state.score = 0;
+      state.answers = [];
+      state.missed = [];
+      state.lastOk = true;
+      document.getElementById('proposal-popup').classList.remove('active');
+      document.getElementById('playful-text').style.opacity = '0';
+
+      document.getElementById('letter-modal').classList.remove('active');
+      document.getElementById('jar').classList.remove('open');
+      document.getElementById('btn-yes').style.transform = 'scale(1)';
+      document.getElementById('btn-no').style.display = 'inline-flex';
+      document.getElementById('btn-no').style.transform = 'translate(0, 0)';
+      document.getElementById('quiz-body').style.display = 'block';
+      document.getElementById('quiz-result').style.display = 'none';
+
+      countdownSecs = 57;
+      navigateTo(1);
+      startMidnightCountdown();
+    }
+
+    /* BURST PARTICLES */
+    function createHeartBurst(x, y, count) {
+      const container = document.getElementById('particle-container');
+      for(let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.textContent = ['💛', '✨', '🌟', '🌸'][Math.floor(Math.random() * 4)];
+        p.style.position = 'absolute';
+        p.style.left = `${x}px`;
+        p.style.top = `${y}px`;
+        p.style.fontSize = `${Math.random() * 12 + 10}px`;
+        p.style.pointerEvents = 'none';
+        p.style.transition = 'all 0.9s ease-out';
+        container.appendChild(p);
+
+        const angle = Math.random() * Math.PI * 2;
+        const dist = Math.random() * 80 + 20;
+        
+        setTimeout(() => {
+          p.style.transform = `translate(${Math.cos(angle) * dist}px, ${Math.sin(angle) * dist}px)`;
+          p.style.opacity = '0';
+        }, 20);
+
+        setTimeout(() => p.remove(), 900);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initStarBackground();
+      initFloatingEmojis();
+      startMidnightCountdown();
+    });
+  </script>
+</body>
+</html>
